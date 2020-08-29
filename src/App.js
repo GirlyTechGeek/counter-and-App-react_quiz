@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// state data for 3 counters
-
-
 class Counter extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +32,7 @@ class Counter extends Component {
 
 class Total extends Component{
   render() {
-    let {sum} = this.props;
+    let sum = this.props;
     return(
       <div>
         {<h2>Toatl value is: {sum}</h2>}

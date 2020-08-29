@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 
 // state data for 3 counters
-const data = [
-  { id: 1, value: 0 },
-  { id: 2, value: 0 },
-  { id: 3, value: 0 },
-];
-
 
 
 class Counter extends Component {
@@ -34,25 +28,44 @@ class Counter extends Component {
         <button onClick={this.IncrementItem}>-</button>
         <button onClick={this.DecreaseItem}>+</button>
         
-       
-        
       </div>
     );
   }
 }
 
+class Total extends Component{
+  render() {
+    let {sum} = this.props;
+    return(
+      <div>
+        {<h2>Toatl value is: {sum}</h2>}
+      </div>
+    )
+  }
+}
+
+
 
 class App extends Component {
- 
-  constructor(props, context) {
-    super(props, context);
+  constructor(props){
+    super(props);
+    this.state ={
+      sum:[],
+      
+   data : [
+    { id: 1, value: 0 },
+    { id: 2, value: 0 },
+    { id: 3, value: 0 },
+    { id: 4, value: 0},
+  ]
+
+    }
   }
 
   render() {
     return (
       <div>
-
-        {data.map((counter) => (
+        {this.state.data.map((counter) => (
           <Counter key={counter.id} value={counter.value} />
         ))}
       </div>
@@ -60,6 +73,7 @@ class App extends Component {
   }
 
 }
+
 
 
 export default App;
